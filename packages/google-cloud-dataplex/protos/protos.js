@@ -47697,6 +47697,7 @@
                              * @interface IBigQueryPublishingConfig
                              * @property {google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig.TableType|null} [tableType] BigQueryPublishingConfig tableType
                              * @property {string|null} [connection] BigQueryPublishingConfig connection
+                             * @property {string|null} [location] BigQueryPublishingConfig location
                              */
     
                             /**
@@ -47731,6 +47732,14 @@
                             BigQueryPublishingConfig.prototype.connection = "";
     
                             /**
+                             * BigQueryPublishingConfig location.
+                             * @member {string} location
+                             * @memberof google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig
+                             * @instance
+                             */
+                            BigQueryPublishingConfig.prototype.location = "";
+    
+                            /**
                              * Creates a new BigQueryPublishingConfig instance using the specified properties.
                              * @function create
                              * @memberof google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig
@@ -47758,6 +47767,8 @@
                                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.tableType);
                                 if (message.connection != null && Object.hasOwnProperty.call(message, "connection"))
                                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.connection);
+                                if (message.location != null && Object.hasOwnProperty.call(message, "location"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.location);
                                 return writer;
                             };
     
@@ -47798,6 +47809,10 @@
                                         }
                                     case 3: {
                                             message.connection = reader.string();
+                                            break;
+                                        }
+                                    case 4: {
+                                            message.location = reader.string();
                                             break;
                                         }
                                     default:
@@ -47847,6 +47862,9 @@
                                 if (message.connection != null && message.hasOwnProperty("connection"))
                                     if (!$util.isString(message.connection))
                                         return "connection: string expected";
+                                if (message.location != null && message.hasOwnProperty("location"))
+                                    if (!$util.isString(message.location))
+                                        return "location: string expected";
                                 return null;
                             };
     
@@ -47884,6 +47902,8 @@
                                 }
                                 if (object.connection != null)
                                     message.connection = String(object.connection);
+                                if (object.location != null)
+                                    message.location = String(object.location);
                                 return message;
                             };
     
@@ -47903,11 +47923,14 @@
                                 if (options.defaults) {
                                     object.tableType = options.enums === String ? "TABLE_TYPE_UNSPECIFIED" : 0;
                                     object.connection = "";
+                                    object.location = "";
                                 }
                                 if (message.tableType != null && message.hasOwnProperty("tableType"))
                                     object.tableType = options.enums === String ? $root.google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig.TableType[message.tableType] === undefined ? message.tableType : $root.google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig.TableType[message.tableType] : message.tableType;
                                 if (message.connection != null && message.hasOwnProperty("connection"))
                                     object.connection = message.connection;
+                                if (message.location != null && message.hasOwnProperty("location"))
+                                    object.location = message.location;
                                 return object;
                             };
     
@@ -81280,6 +81303,345 @@
                         })();
     
                         return DataQualityScanRuleResult;
+                    })();
+    
+                    v1.BusinessGlossaryEvent = (function() {
+    
+                        /**
+                         * Properties of a BusinessGlossaryEvent.
+                         * @memberof google.cloud.dataplex.v1
+                         * @interface IBusinessGlossaryEvent
+                         * @property {string|null} [message] BusinessGlossaryEvent message
+                         * @property {google.cloud.dataplex.v1.BusinessGlossaryEvent.EventType|null} [eventType] BusinessGlossaryEvent eventType
+                         * @property {string|null} [resource] BusinessGlossaryEvent resource
+                         */
+    
+                        /**
+                         * Constructs a new BusinessGlossaryEvent.
+                         * @memberof google.cloud.dataplex.v1
+                         * @classdesc Represents a BusinessGlossaryEvent.
+                         * @implements IBusinessGlossaryEvent
+                         * @constructor
+                         * @param {google.cloud.dataplex.v1.IBusinessGlossaryEvent=} [properties] Properties to set
+                         */
+                        function BusinessGlossaryEvent(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * BusinessGlossaryEvent message.
+                         * @member {string} message
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @instance
+                         */
+                        BusinessGlossaryEvent.prototype.message = "";
+    
+                        /**
+                         * BusinessGlossaryEvent eventType.
+                         * @member {google.cloud.dataplex.v1.BusinessGlossaryEvent.EventType} eventType
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @instance
+                         */
+                        BusinessGlossaryEvent.prototype.eventType = 0;
+    
+                        /**
+                         * BusinessGlossaryEvent resource.
+                         * @member {string} resource
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @instance
+                         */
+                        BusinessGlossaryEvent.prototype.resource = "";
+    
+                        /**
+                         * Creates a new BusinessGlossaryEvent instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {google.cloud.dataplex.v1.IBusinessGlossaryEvent=} [properties] Properties to set
+                         * @returns {google.cloud.dataplex.v1.BusinessGlossaryEvent} BusinessGlossaryEvent instance
+                         */
+                        BusinessGlossaryEvent.create = function create(properties) {
+                            return new BusinessGlossaryEvent(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified BusinessGlossaryEvent message. Does not implicitly {@link google.cloud.dataplex.v1.BusinessGlossaryEvent.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {google.cloud.dataplex.v1.IBusinessGlossaryEvent} message BusinessGlossaryEvent message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BusinessGlossaryEvent.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.message != null && Object.hasOwnProperty.call(message, "message"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
+                            if (message.eventType != null && Object.hasOwnProperty.call(message, "eventType"))
+                                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.eventType);
+                            if (message.resource != null && Object.hasOwnProperty.call(message, "resource"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.resource);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified BusinessGlossaryEvent message, length delimited. Does not implicitly {@link google.cloud.dataplex.v1.BusinessGlossaryEvent.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {google.cloud.dataplex.v1.IBusinessGlossaryEvent} message BusinessGlossaryEvent message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BusinessGlossaryEvent.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a BusinessGlossaryEvent message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.dataplex.v1.BusinessGlossaryEvent} BusinessGlossaryEvent
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BusinessGlossaryEvent.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.dataplex.v1.BusinessGlossaryEvent();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1: {
+                                        message.message = reader.string();
+                                        break;
+                                    }
+                                case 2: {
+                                        message.eventType = reader.int32();
+                                        break;
+                                    }
+                                case 3: {
+                                        message.resource = reader.string();
+                                        break;
+                                    }
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a BusinessGlossaryEvent message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.dataplex.v1.BusinessGlossaryEvent} BusinessGlossaryEvent
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BusinessGlossaryEvent.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a BusinessGlossaryEvent message.
+                         * @function verify
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        BusinessGlossaryEvent.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.message != null && message.hasOwnProperty("message"))
+                                if (!$util.isString(message.message))
+                                    return "message: string expected";
+                            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                                switch (message.eventType) {
+                                default:
+                                    return "eventType: enum value expected";
+                                case 0:
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                case 5:
+                                case 6:
+                                case 7:
+                                case 8:
+                                case 9:
+                                    break;
+                                }
+                            if (message.resource != null && message.hasOwnProperty("resource"))
+                                if (!$util.isString(message.resource))
+                                    return "resource: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a BusinessGlossaryEvent message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.dataplex.v1.BusinessGlossaryEvent} BusinessGlossaryEvent
+                         */
+                        BusinessGlossaryEvent.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.dataplex.v1.BusinessGlossaryEvent)
+                                return object;
+                            var message = new $root.google.cloud.dataplex.v1.BusinessGlossaryEvent();
+                            if (object.message != null)
+                                message.message = String(object.message);
+                            switch (object.eventType) {
+                            default:
+                                if (typeof object.eventType === "number") {
+                                    message.eventType = object.eventType;
+                                    break;
+                                }
+                                break;
+                            case "EVENT_TYPE_UNSPECIFIED":
+                            case 0:
+                                message.eventType = 0;
+                                break;
+                            case "GLOSSARY_CREATE":
+                            case 1:
+                                message.eventType = 1;
+                                break;
+                            case "GLOSSARY_UPDATE":
+                            case 2:
+                                message.eventType = 2;
+                                break;
+                            case "GLOSSARY_DELETE":
+                            case 3:
+                                message.eventType = 3;
+                                break;
+                            case "GLOSSARY_CATEGORY_CREATE":
+                            case 4:
+                                message.eventType = 4;
+                                break;
+                            case "GLOSSARY_CATEGORY_UPDATE":
+                            case 5:
+                                message.eventType = 5;
+                                break;
+                            case "GLOSSARY_CATEGORY_DELETE":
+                            case 6:
+                                message.eventType = 6;
+                                break;
+                            case "GLOSSARY_TERM_CREATE":
+                            case 7:
+                                message.eventType = 7;
+                                break;
+                            case "GLOSSARY_TERM_UPDATE":
+                            case 8:
+                                message.eventType = 8;
+                                break;
+                            case "GLOSSARY_TERM_DELETE":
+                            case 9:
+                                message.eventType = 9;
+                                break;
+                            }
+                            if (object.resource != null)
+                                message.resource = String(object.resource);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a BusinessGlossaryEvent message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {google.cloud.dataplex.v1.BusinessGlossaryEvent} message BusinessGlossaryEvent
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        BusinessGlossaryEvent.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.message = "";
+                                object.eventType = options.enums === String ? "EVENT_TYPE_UNSPECIFIED" : 0;
+                                object.resource = "";
+                            }
+                            if (message.message != null && message.hasOwnProperty("message"))
+                                object.message = message.message;
+                            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                                object.eventType = options.enums === String ? $root.google.cloud.dataplex.v1.BusinessGlossaryEvent.EventType[message.eventType] === undefined ? message.eventType : $root.google.cloud.dataplex.v1.BusinessGlossaryEvent.EventType[message.eventType] : message.eventType;
+                            if (message.resource != null && message.hasOwnProperty("resource"))
+                                object.resource = message.resource;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this BusinessGlossaryEvent to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        BusinessGlossaryEvent.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        /**
+                         * Gets the default type url for BusinessGlossaryEvent
+                         * @function getTypeUrl
+                         * @memberof google.cloud.dataplex.v1.BusinessGlossaryEvent
+                         * @static
+                         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns {string} The default type url
+                         */
+                        BusinessGlossaryEvent.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                            if (typeUrlPrefix === undefined) {
+                                typeUrlPrefix = "type.googleapis.com";
+                            }
+                            return typeUrlPrefix + "/google.cloud.dataplex.v1.BusinessGlossaryEvent";
+                        };
+    
+                        /**
+                         * EventType enum.
+                         * @name google.cloud.dataplex.v1.BusinessGlossaryEvent.EventType
+                         * @enum {number}
+                         * @property {number} EVENT_TYPE_UNSPECIFIED=0 EVENT_TYPE_UNSPECIFIED value
+                         * @property {number} GLOSSARY_CREATE=1 GLOSSARY_CREATE value
+                         * @property {number} GLOSSARY_UPDATE=2 GLOSSARY_UPDATE value
+                         * @property {number} GLOSSARY_DELETE=3 GLOSSARY_DELETE value
+                         * @property {number} GLOSSARY_CATEGORY_CREATE=4 GLOSSARY_CATEGORY_CREATE value
+                         * @property {number} GLOSSARY_CATEGORY_UPDATE=5 GLOSSARY_CATEGORY_UPDATE value
+                         * @property {number} GLOSSARY_CATEGORY_DELETE=6 GLOSSARY_CATEGORY_DELETE value
+                         * @property {number} GLOSSARY_TERM_CREATE=7 GLOSSARY_TERM_CREATE value
+                         * @property {number} GLOSSARY_TERM_UPDATE=8 GLOSSARY_TERM_UPDATE value
+                         * @property {number} GLOSSARY_TERM_DELETE=9 GLOSSARY_TERM_DELETE value
+                         */
+                        BusinessGlossaryEvent.EventType = (function() {
+                            var valuesById = {}, values = Object.create(valuesById);
+                            values[valuesById[0] = "EVENT_TYPE_UNSPECIFIED"] = 0;
+                            values[valuesById[1] = "GLOSSARY_CREATE"] = 1;
+                            values[valuesById[2] = "GLOSSARY_UPDATE"] = 2;
+                            values[valuesById[3] = "GLOSSARY_DELETE"] = 3;
+                            values[valuesById[4] = "GLOSSARY_CATEGORY_CREATE"] = 4;
+                            values[valuesById[5] = "GLOSSARY_CATEGORY_UPDATE"] = 5;
+                            values[valuesById[6] = "GLOSSARY_CATEGORY_DELETE"] = 6;
+                            values[valuesById[7] = "GLOSSARY_TERM_CREATE"] = 7;
+                            values[valuesById[8] = "GLOSSARY_TERM_UPDATE"] = 8;
+                            values[valuesById[9] = "GLOSSARY_TERM_DELETE"] = 9;
+                            return values;
+                        })();
+    
+                        return BusinessGlossaryEvent;
                     })();
     
                     v1.MetadataService = (function() {
